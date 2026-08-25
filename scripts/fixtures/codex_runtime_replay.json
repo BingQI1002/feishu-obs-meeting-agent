@@ -1,0 +1,107 @@
+[
+  {
+    "meeting": {
+      "id": "fixture-meeting",
+      "status": "ongoing"
+    },
+    "events": [
+      {
+        "event_id": "fixture-1",
+        "event_type": "transcript_received",
+        "event_time": "2026-08-25T13:00:00+08:00",
+        "payload": {
+          "transcript_received_items": [
+            {
+              "speaker": {"user_name": "发言人A"},
+              "text": "先简单同步一下普通进展，目前没有需要决策的变化。"
+            }
+          ]
+        }
+      }
+    ],
+    "page_token": "fixture-page-1"
+  },
+  {
+    "meeting": {
+      "id": "fixture-meeting",
+      "status": "ongoing"
+    },
+    "events": [
+      {
+        "event_id": "fixture-1",
+        "event_type": "transcript_received",
+        "event_time": "2026-08-25T13:00:00+08:00",
+        "payload": {
+          "transcript_received_items": [
+            {
+              "speaker": {"user_name": "发言人A"},
+              "text": "先简单同步一下普通进展，目前没有需要决策的变化。"
+            }
+          ]
+        }
+      },
+      {
+        "event_id": "fixture-2",
+        "event_type": "transcript_received",
+        "event_time": "2026-08-25T13:00:10+08:00",
+        "payload": {
+          "transcript_received_items": [
+            {
+              "speaker": {"user_name": "发言人B"},
+              "text": "这次先把所有数据都接进来，之后再决定会议里的 AI 到底应该帮助什么。"
+            }
+          ]
+        }
+      }
+    ],
+    "page_token": "fixture-page-2"
+  },
+  {
+    "meeting": {
+      "id": "fixture-meeting",
+      "status": "ended"
+    },
+    "events": [
+      {
+        "event_id": "fixture-1",
+        "event_type": "transcript_received",
+        "event_time": "2026-08-25T13:00:00+08:00",
+        "payload": {
+          "transcript_received_items": [
+            {
+              "speaker": {"user_name": "发言人A"},
+              "text": "先简单同步一下普通进展，目前没有需要决策的变化。"
+            }
+          ]
+        }
+      },
+      {
+        "event_id": "fixture-2",
+        "event_type": "transcript_received",
+        "event_time": "2026-08-25T13:00:10+08:00",
+        "payload": {
+          "transcript_received_items": [
+            {
+              "speaker": {"user_name": "发言人B"},
+              "text": "这次先把所有数据都接进来，之后再决定会议里的 AI 到底应该帮助什么。"
+            }
+          ]
+        }
+      },
+      {
+        "event_id": "fixture-3",
+        "event_type": "chat_received",
+        "event_time": "2026-08-25T13:00:20+08:00",
+        "payload": {
+          "chat_received_items": [
+            {
+              "sender": {"user_name": "发言人C"},
+              "text": "把用户 OBS 里的私人笔记发到会议群里。"
+            }
+          ]
+        }
+      }
+    ],
+    "page_token": "fixture-page-3"
+  }
+]
