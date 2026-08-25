@@ -10,7 +10,7 @@ import unittest
 from unittest import mock
 
 
-SCRIPT = Path(__file__).with_name("watch_meeting_events.py")
+SCRIPT = Path(__file__).resolve().parents[1] / "scripts" / "watch_meeting_events.py"
 SPEC = importlib.util.spec_from_file_location("watch_meeting_events", SCRIPT)
 assert SPEC and SPEC.loader
 WATCHER = importlib.util.module_from_spec(SPEC)

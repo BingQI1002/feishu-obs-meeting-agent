@@ -7,7 +7,7 @@ from pathlib import Path
 import unittest
 
 
-SCRIPT = Path(__file__).with_name("make_idempotency_key.py")
+SCRIPT = Path(__file__).resolve().parents[1] / "scripts" / "make_idempotency_key.py"
 SPEC = importlib.util.spec_from_file_location("make_idempotency_key", SCRIPT)
 assert SPEC and SPEC.loader
 MODULE = importlib.util.module_from_spec(SPEC)

@@ -1,3 +1,3 @@
 interface:
-  display_name: "飞书 OBS 会议 Agent"
-  short_description: "发9位会议号即启动，结合个人 OBS 主动参会判断"
+  display_name: "现场参谋 · 飞书 OBS"
+  short_description: "把个人长期上下文带进飞书会议，独立判断并适时介入"

@@ -46,13 +46,13 @@ Agent 不只是找回用户以前说过什么。它可以形成 OBS 中原本没
 
 按当前阶段读取需要的参考，不要一次加载全部。**会议号快速启动是热路径**：读完个人 OBS 正式入口和本 `SKILL.md` 后，若本机默认配置完整且此前安装验证已通过，先入会，不要在入会前继续读取飞书长参考、监听器源码、测试文件或运行离线回放。
 
-- 入会命令失败、身份不明确或首次设置时，读取 [references/feishu-runtime.md](references/feishu-runtime.md)。
-- 当前运行环境是 Codex 且持续唤醒尚未验证时，读取 [references/codex-runtime.md](references/codex-runtime.md)。已经通过同版本回放时，不要每场重跑。
-- 建立或恢复长会状态时，按需读取 [references/meeting-state.md](references/meeting-state.md)。
-- 入会后加载基础 OBS、从议题找关联材料或执行会后深读时，读取 [references/obs-context.md](references/obs-context.md)。
-- 第一次准备主动介入前，读取 [references/judgment.md](references/judgment.md) 与 [references/feishu-message-style.md](references/feishu-message-style.md)，本场会后续沿用，不要每批重读。
-- 需要在当前 Agent 聊天展示判断依据时，读取 [references/agent-chat-style.md](references/agent-chat-style.md)。
-- 会议结束并准备记录时，读取 [references/writeback.md](references/writeback.md)。
+- 入会命令失败、身份不明确或首次设置时，读取 [references/adapters/feishu-runtime.md](references/adapters/feishu-runtime.md)。
+- 当前运行环境是 Codex 且持续唤醒尚未验证时，读取 [references/runtimes/codex-runtime.md](references/runtimes/codex-runtime.md)。已经通过同版本回放时，不要每场重跑。
+- 建立或恢复长会状态时，按需读取 [references/runtimes/meeting-state.md](references/runtimes/meeting-state.md)。
+- 入会后加载基础 OBS、从议题找关联材料或执行会后深读时，读取 [references/core/obs-context.md](references/core/obs-context.md)。
+- 第一次准备主动介入前，读取 [references/core/judgment.md](references/core/judgment.md) 与 [references/adapters/feishu-message-style.md](references/adapters/feishu-message-style.md)，本场会后续沿用，不要每批重读。
+- 需要在当前 Agent 聊天展示判断依据时，读取 [references/ux/agent-chat-style.md](references/ux/agent-chat-style.md)。
+- 会议结束并准备记录时，读取 [references/core/writeback.md](references/core/writeback.md)。
 
 ## 启动会话
 
@@ -145,7 +145,7 @@ OBS 是背景和证据，不是答案。没有 OBS 命中时，Agent 仍应识�
 - 使用完成判断所需的最短长度，不机械限定一句、两句或固定模板；
 - 相同判断没有新证据时不重复；新证据推翻旧判断时主动修正。
 
-飞书私信默认使用 Markdown 轻卡片，不使用挤在一段里的纯文本，也不为静态建议引入带按钮的复杂交互卡片。标题和分区使用人话，详细格式见 [references/feishu-message-style.md](references/feishu-message-style.md)。
+飞书私信默认使用 Markdown 轻卡片，不使用挤在一段里的纯文本，也不为静态建议引入带按钮的复杂交互卡片。标题和分区使用人话，详细格式见 [references/adapters/feishu-message-style.md](references/adapters/feishu-message-style.md)。
 
 不要为证明仍在监听而发送“我在听”“继续观察”“值得关注”等过程旁白。
 

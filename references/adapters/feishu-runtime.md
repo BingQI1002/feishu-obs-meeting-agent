@@ -1,4 +1,4 @@
-# 飞书运行适配器
+# 飞书接入适配器
 
 ## 能力契约
 
@@ -14,7 +14,7 @@ leave(session)
 
 当前本机通过 `lark-cli` 实现。若运行环境已经提供 `lark-meeting`、`lark-im` 或等价 Skill，先读取对应场景说明；不要把本文当成完整飞书 API 手册。
 
-运行环境缺少持续子进程或事件唤醒能力时，只能做一次性查询，不能声称实现主动会议 Agent。Codex 的当前实现见 [codex-runtime.md](codex-runtime.md)；其他 Agent 安装前必须建立并实测自己的等价绑定。
+运行环境缺少持续子进程或事件唤醒能力时，只能做一次性查询，不能声称实现主动会议 Agent。Codex 的当前实现见 [codex-runtime.md](../runtimes/codex-runtime.md)；其他 Agent 安装前必须建立并实测自己的等价绑定。
 
 ## 身份连续性
 
