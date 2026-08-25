@@ -48,6 +48,7 @@ Agent 不只是找回用户以前说过什么。它可以形成 OBS 中原本没
 
 - 入会命令失败、身份不明确或首次设置时，读取 [references/adapters/feishu-runtime.md](references/adapters/feishu-runtime.md)。
 - 当前运行环境是 Codex 且持续唤醒尚未验证时，读取 [references/runtimes/codex-runtime.md](references/runtimes/codex-runtime.md)。已经通过同版本回放时，不要每场重跑。
+- 当前环境提供持久 Monitor，能把命令 stdout 变成同一 Agent 会话的新回合，且该链路尚未验证时，读取 [references/runtimes/monitor-runtime.md](references/runtimes/monitor-runtime.md)。按运行能力选择，不按模型名称猜；已经通过同版本回放时不要每场重跑。
 - 建立或恢复长会状态时，按需读取 [references/runtimes/meeting-state.md](references/runtimes/meeting-state.md)。
 - 入会后加载基础 OBS、从议题找关联材料或执行会后深读时，读取 [references/core/obs-context.md](references/core/obs-context.md)。
 - 第一次准备主动介入前，读取 [references/core/judgment.md](references/core/judgment.md) 与 [references/adapters/feishu-message-style.md](references/adapters/feishu-message-style.md)，本场会后续沿用，不要每批重读。

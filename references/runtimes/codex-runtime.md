@@ -44,4 +44,4 @@
 
 ## 当前支持范围
 
-这份适配器只证明 Codex 的运行方式。Claude、MOMA 和 Hermes 必须分别验证“长运行进程输出如何成为 Agent 回合”；复制主 Skill 文件本身不会自动获得主动唤醒能力。
+这份适配器只证明 Codex 会话续读的运行方式。具备持久 Monitor、能把 stdout 变成同一 Agent 会话新回合的环境，改用 [monitor-runtime.md](monitor-runtime.md)。其他宿主仍必须分别验证“长运行进程输出如何成为 Agent 回合”；复制主 Skill 文件本身不会自动获得主动唤醒能力。
