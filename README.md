@@ -1,6 +1,8 @@
 # 现场参谋（Feishu OBS Meeting Agent）
 
-> **当前版本：v0.1.5｜飞书会议首版**
+> **当前版本：v0.1.6｜飞书会议首版**
+>
+> **第一次接入：**把[飞书智能体入会接入手册](https://bytedance.larkoffice.com/docx/W2Wgdi5Ifoal8uxqQNHcxNGRnMc)发给你的 AI Agent，它会按步骤帮你把接入跑通。无需查其他文档。
 
 它不是会议纪要机器人，也不是给会议接一个 Obsidian 搜索框。
 
@@ -71,30 +73,19 @@ npx skills add BingQI1002/feishu-obs-meeting-agent -g
 
 - 一个能够运行 Skill、读取本地文件并执行命令的 Agent；
 - `lark-cli` 与 Python 3；
-- 已完成授权、具备机器人入会能力的飞书身份；
+- 可创建或配置企业自建应用的飞书账号；
 - 经本人允许访问的个人 Obsidian，以及其中唯一的正式协作入口。
 
 首次使用时，Agent 会建立本机默认配置，确认入会身份、私信接收人、OBS 入口、会后回流方式和临时事件保留策略。以后在可信对话中单独发送飞书 9 位会议号即可启动。
 
-## 飞书首次配置
+## 第一次接入的关键点
 
-安装 Skill 只获得 Agent 能力，不会自动开通飞书独立入会。首次使用前还需要完成两步人工配置；独立入会目前属于早鸟灰度，最新资格与界面以[飞书智能体入会接入手册](https://bytedance.larkoffice.com/docx/W2Wgdi5Ifoal8uxqQNHcxNGRnMc)为准。
+安装 Skill 不会自动获得飞书独立入会资格。把上面的官方手册链接交给 Agent 后，它会检查版本、生成配置入口并带你完成接入；你主要需要亲手确认：
 
-### 1. 开通并配置机器人入会
+- **首次一次：**当前独立入会属于早鸟灰度；在飞书后台确认企业自建应用、机器人能力、权限与事件订阅，并发布应用版本；
+- **每场会议：**由会议 owner 开启“AI 总结”，再在安全设置中开启“允许智能体入会”。
 
-- 加入独立入会早鸟体验；
-- 创建或复用企业自建应用，并开启“机器人”能力；
-- 申请应用身份权限 `vc:meeting.bot.join:write`、`vc:meeting.meetingevent:read`；
-- 订阅 `vc.bot.meeting_invited_v1`、`vc.bot.meeting_ended_v1`、`vc.bot.meeting_activity_v1`；
-- 发布应用版本。
-
-### 2. 在客户端允许智能体加入
-
-- 飞书客户端升级到 7.68+；
-- `lark-cli` 升级到 v1.0.55+：`npm install -g @larksuite/cli@latest`；
-- 每场会议由 owner 开启“AI 总结”，再在安全设置中开启“允许智能体入会”。
-
-完成以上步骤后，Agent 才继续配置本机飞书 profile、私信接收人和 OBS 入口。App Secret、token 等凭据只保存在对应飞书工具的凭据系统中，不写入本 Skill 配置。
+随后 Agent 会继续配置本机飞书身份、私信接收人和 OBS 入口。App Secret、token 等凭据只保存在飞书工具的凭据系统中，不写入本 Skill 配置；权限和事件字段细节由 Agent 按官方手册处理。
 
 ## 安全边界
 
@@ -129,6 +120,6 @@ feishu-obs-meeting-agent/
 - [`CHANGELOG.md`](CHANGELOG.md)：查看每个版本具体改变了什么；
 - [Git Tags](https://github.com/BingQI1002/feishu-obs-meeting-agent/tags)：下载或回退到指定版本；
 - `v0.1.0`：仅支持飞书的初始能力基线；
-- `v0.1.5`：补充飞书独立入会官方手册、早鸟资格和首次人工配置步骤。
+- `v0.1.6`：把官方接入手册前置，并将 README 的人工配置压缩为首次确认与每场会议开关。
 
 技术接通不等于价值成立。一次真实测试是否成功，最终看建议有没有改善你的判断、发言、决定或行动，以及会后形成的内容能否让下一次协作更好。
