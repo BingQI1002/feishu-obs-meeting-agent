@@ -16,6 +16,33 @@ leave(session)
 
 运行环境缺少持续子进程或事件唤醒能力时，只能做一次性查询，不能声称实现主动会议 Agent。Codex 的当前实现见 [codex-runtime.md](../runtimes/codex-runtime.md)；其他 Agent 安装前必须建立并实测自己的等价绑定。
 
+## 飞书开放平台前置
+
+安装本 Skill 不会获得独立入会资格或自动修改飞书应用。当前独立入会属于早鸟灰度；首次设置、资格变化或入会失败时，以[飞书智能体入会接入手册](https://bytedance.larkoffice.com/docx/W2Wgdi5Ifoal8uxqQNHcxNGRnMc)为权威来源。
+
+用户需要人工完成：
+
+1. 创建或复用企业自建应用，开启“机器人”能力；
+2. 申请应用身份权限：
+   - `vc:meeting.bot.join:write`
+   - `vc:meeting.meetingevent:read`
+3. 订阅并严格核对三个事件字段：
+   - `vc.bot.meeting_invited_v1`
+   - `vc.bot.meeting_ended_v1`
+   - `vc.bot.meeting_activity_v1`
+4. 发布应用版本；
+5. 飞书客户端升级到 7.68+，`lark-cli` 升级到 v1.0.55+；
+6. 每场会议由 owner 开启“AI 总结”，再在安全设置中开启“允许智能体入会”。
+
+Agent 可以检查版本、权限与事件字段，并在工具支持时生成一键配置入口；用户仍需在飞书后台确认权限、事件、发布和会议开关。App ID / Secret、Tenant Token 和用户 token 不得写进 Skill、脚本、README 或本地默认配置。
+
+排查时优先区分：
+
+- 没有早鸟资格或会议开关未开：不是监听脚本故障；
+- Bot 入会使用 User Token：独立入会只接受应用身份 / Tenant Token；
+- 收不到字幕：先核对事件订阅字段，再检查 watcher；
+- 9 位会议号不是长 `meeting_id`：后续事件读取必须使用入会返回的长 ID。
+
 ## 身份连续性
 
 入会、读取事件和离会必须沿用同一应用身份。私信身份在启动授权中单独确定，不得为绕过权限静默切换。
