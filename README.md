@@ -1,8 +1,12 @@
 # 现场参谋（Feishu OBS Meeting Agent）
 
-> **当前版本：v0.1.6｜飞书会议首版**
+> **当前版本：v0.1.7｜飞书会议首版**
 >
-> **第一次接入：**把[飞书智能体入会接入手册](https://bytedance.larkoffice.com/docx/W2Wgdi5Ifoal8uxqQNHcxNGRnMc)发给你的 AI Agent，它会按步骤帮你把接入跑通。无需查其他文档。
+> **第一次接入**
+>
+> 把下面这篇文档链接发给你的 AI Agent，它会按步骤帮你把接入跑通。无需查其他文档。
+>
+> <https://bytedance.larkoffice.com/docx/W2Wgdi5Ifoal8uxqQNHcxNGRnMc>
 
 它不是会议纪要机器人，也不是给会议接一个 Obsidian 搜索框。
 
@@ -80,12 +84,12 @@ npx skills add BingQI1002/feishu-obs-meeting-agent -g
 
 ## 第一次接入的关键点
 
-安装 Skill 不会自动获得飞书独立入会资格。把上面的官方手册链接交给 Agent 后，它会检查版本、生成配置入口并带你完成接入；你主要需要亲手确认：
+安装后可以直接把 9 位会议号发给 Agent。若本机尚未配置，Skill 会自动读取上面的官方手册并启动首次设置；你主要需要亲手确认：
 
 - **首次一次：**当前独立入会属于早鸟灰度；在飞书后台确认企业自建应用、机器人能力、权限与事件订阅，并发布应用版本；
 - **每场会议：**由会议 owner 开启“AI 总结”，再在安全设置中开启“允许智能体入会”。
 
-随后 Agent 会继续配置本机飞书身份、私信接收人和 OBS 入口。App Secret、token 等凭据只保存在飞书工具的凭据系统中，不写入本 Skill 配置；权限和事件字段细节由 Agent 按官方手册处理。
+随后 Agent 会继续配置本机飞书身份、私信接收人和 OBS 入口。若 Agent 无法访问手册，它会把原始链接发给你，不要求你自行搜索其他文档。App Secret、token 等凭据只保存在飞书工具的凭据系统中，不写入本 Skill 配置。
 
 ## 安全边界
 
@@ -120,6 +124,6 @@ feishu-obs-meeting-agent/
 - [`CHANGELOG.md`](CHANGELOG.md)：查看每个版本具体改变了什么；
 - [Git Tags](https://github.com/BingQI1002/feishu-obs-meeting-agent/tags)：下载或回退到指定版本；
 - `v0.1.0`：仅支持飞书的初始能力基线；
-- `v0.1.6`：把官方接入手册前置，并将 README 的人工配置压缩为首次确认与每场会议开关。
+- `v0.1.7`：展示可复制的官方手册原始链接，并让 Skill 在配置缺失时自动读取并启动接入。
 
 技术接通不等于价值成立。一次真实测试是否成功，最终看建议有没有改善你的判断、发言、决定或行动，以及会后形成的内容能否让下一次协作更好。
